@@ -1,0 +1,292 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Monaco Editor overrides */
+.monaco-editor {
+  background-color: #1e1e1e !important;
+}
+
+.monaco-editor .margin {
+  background-color: #1e1e1e !important;
+}
+
+/* Terminal styles */
+.xterm {
+  font-feature-settings: "liga" 0;
+  position: relative;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+.xterm.focus,
+.xterm:focus {
+  outline: none;
+}
+
+.xterm .xterm-helpers {
+  position: absolute;
+  top: 0;
+  z-index: 5;
+}
+
+.xterm .xterm-helper-textarea {
+  position: absolute;
+  opacity: 0;
+  left: -9999em;
+  top: 0;
+  width: 0;
+  height: 0;
+  z-index: -5;
+  white-space: nowrap;
+  overflow: hidden;
+  resize: none;
+}
+
+/* AI Panel styles */
+.ai-panel {
+  background: #252526;
+  border-left: 1px solid #3e3e3e;
+}
+
+.ai-chat-message {
+  padding: 8px 12px;
+  margin: 4px 0;
+  border-radius: 4px;
+}
+
+.ai-chat-message.user {
+  background: #0e639c;
+  color: white;
+  margin-left: 20px;
+}
+
+.ai-chat-message.assistant {
+  background: #2d2d30;
+  color: #d4d4d4;
+  margin-right: 20px;
+}
+
+.ai-input {
+  background: #3c3c3c;
+  border: 1px solid #464647;
+  color: #d4d4d4;
+  padding: 8px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  width: 100%;
+  resize: vertical;
+}
+
+.ai-input:focus {
+  outline: none;
+  border-color: #007acc;
+}
+
+/* Button styles */
+.btn {
+  background: #0e639c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background: #1177bb;
+}
+
+.btn:disabled {
+  background: #6c6c6c;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: #5a5a5a;
+}
+
+.btn-secondary:hover {
+  background: #6a6a6a;
+}
+
+/* File tree styles */
+.file-tree {
+  background: #252526;
+  color: #d4d4d4;
+  font-size: 13px;
+}
+
+.file-tree-item {
+  padding: 4px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.file-tree-item:hover {
+  background: #2a2d2e;
+}
+
+.file-tree-item.selected {
+  background: #094771;
+}
+
+.file-tree-icon {
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status bar */
+.status-bar {
+  background: #007acc;
+  color: white;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+/* Activity bar */
+.activity-bar {
+  background: #333333;
+  width: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.activity-bar-item {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #d4d4d4;
+}
+
+.activity-bar-item:hover {
+  background: #404040;
+}
+
+.activity-bar-item.active {
+  background: #094771;
+  color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #252526;
+  border-right: 1px solid #3e3e3e;
+  min-width: 240px;
+  max-width: 600px;
+}
+
+.sidebar-header {
+  background: #2d2d30;
+  padding: 8px 12px;
+  border-bottom: 1px solid #3e3e3e;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #d4d4d4;
+}
+
+/* Tab styles */
+.tab-bar {
+  background: #2d2d30;
+  border-bottom: 1px solid #3e3e3e;
+  display: flex;
+  overflow-x: auto;
+}
+
+.tab {
+  background: #2d2d30;
+  color: #969696;
+  padding: 8px 16px;
+  border-right: 1px solid #3e3e3e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  min-width: 120px;
+  position: relative;
+}
+
+.tab:hover {
+  color: #d4d4d4;
+}
+
+.tab.active {
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+.tab-close {
+  margin-left: 8px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.tab-close:hover {
+  background: #424242;
+  opacity: 1;
+}
